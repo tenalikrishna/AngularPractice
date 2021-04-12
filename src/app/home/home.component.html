@@ -1,0 +1,80 @@
+<mat-toolbar id="mainToolbar" color="primary">
+  <mat-icon (click)="onToolbarMenuToggle()" id="toolbarMenu">subject</mat-icon>
+  Welcome
+  <span class="toolbar-spacer"></span>
+  <mat-icon
+    class="toolbar-icon"
+    matBadge="{{badgeNo}}"
+    matBadgePosition="after"
+    matBadgeColor="accent"
+    >notifications</mat-icon
+  >
+  &nbsp;
+  <span class="profile-text">Profile</span>
+  &nbsp;
+  <div>
+    <img
+      src="../../assets/images/download.png"
+      class="avata-styles"
+      (click)="openDialog()"
+    />
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container
+  id="sidenavContainer"
+  style="overflow: hidden"
+  fullscreen
+>
+  <mat-sidenav
+    mode="side"
+    #sidenav
+    id="sidenav"
+    [class.menu-open]="isMenuOpen"
+    [class.menu-close]="!isMenuOpen"
+    opened
+  >
+    <mat-list id="menus">
+      <!-- <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="avatar"></div>
+
+          <mat-card-title>SIVA</mat-card-title>
+          <mat-card-subtitle>Miracle software systems</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card> -->
+      <mat-list-item>
+        <button
+          class="menu-item"
+          mat-flat-button
+          routerLink="home/sidebar"
+          routerLinkActive="router-link-active"
+        >
+          <mat-icon>dashboard</mat-icon>
+          Dashboard
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button>
+          <mat-icon>work</mat-icon>
+          Profile
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button>
+          <mat-icon>settings_application</mat-icon>
+          Settings
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content [ngStyle]="{ 'margin-left.px': contentMargin }">
+    <mat-selection-list class="dash-list">
+      <h3>TO DO</h3>
+      <router-outlet></router-outlet>
+    </mat-selection-list>
+  </mat-sidenav-content>
+</mat-sidenav-container>

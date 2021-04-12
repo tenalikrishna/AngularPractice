@@ -1,0 +1,55 @@
+<toaster-container [toasterconfig]="config1"></toaster-container>
+<div class="header">Log In</div>
+<br />
+<form [formGroup]="loginform" (ngSubmit)="login()">
+  <mat-form-field>
+    <mat-icon matPrefix>person</mat-icon>
+    <input
+      matInput
+      placeholder="UserName"
+      type="text"
+      formControlName="userName"
+      required
+    />
+    <mat-error *ngIf="loginform.controls.userName.invalid">
+      UserName is invalid
+    </mat-error>
+  </mat-form-field>
+  <div>
+    <mat-form-field>
+      <mat-icon matPrefix>vpn_key</mat-icon>
+      <input
+        matInput
+        placeholder="Password"
+        [type]="hide ? 'text' : 'password'"
+        formControlName="password"
+        required
+      />
+      <mat-icon matSuffix (click)="hide = !hide"
+        >{{hide ? 'visibility' : 'visibility_off'}}</mat-icon
+      >
+      <mat-error *ngIf="loginform.controls.password.invalid">
+        Password is invalid
+      </mat-error>
+    </mat-form-field>
+    <!-- <div *ngIf="password.touched && password?.errors.minLength">
+      Password must be max 8 characters long.
+    </div> -->
+  </div>
+  <br />
+  <button
+    mat-raised-button
+    color="primary"
+    class="button-styles"
+    type="submit"
+    [disabled]="!loginform.valid"
+  >
+    LOG IN
+  </button>
+  <span>
+    <p>
+      <span class="textStyles">Don't You have any accoutnt ?</span> &nbsp;
+      <a class="textStyles" routerLink="/register">Regiter here</a>
+    </p>
+  </span>
+</form>

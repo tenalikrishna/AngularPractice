@@ -1,0 +1,12 @@
+{
+  "/register/*" : {
+  "target": "http://localhost:3000",
+  "changeOrigin": true,
+  "secure": false,
+  "logLevel": "debug",
+  "pathRewrite": {
+    "^/register": "http://localhost:3000/api/register"
+  }
+}
+}
+

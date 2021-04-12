@@ -1,0 +1,12 @@
+<mat-tab-group [disableRipple]="true">
+  <mat-tab label="tab" *ngFor="let item of userData">
+    {{item.userId}} <br />
+    {{item.id}}<br />
+    {{item.title}}<br />
+    {{item.completed}}<br />
+  </mat-tab>
+</mat-tab-group>
+<div *ngFor="let item of userData2">
+  <img [src]="item.url" alt="Place image title" />
+</div>
+<toaster-container [toasterconfig]="config1"></toaster-container>

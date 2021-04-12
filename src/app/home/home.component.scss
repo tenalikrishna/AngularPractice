@@ -1,0 +1,19 @@
+.avata-styles{
+    height: 30px;
+    width: 30px;
+    margin-top: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+    cursor: pointer;
+
+}
+.profile-text {
+  font-size: initial;
+  // border-left-style: outset;
+  padding: 3px;
+}
+::ng-deep.mat-list-base {
+  padding-top: 0px;
+  overflow: hidden;
+}

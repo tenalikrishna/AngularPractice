@@ -1,0 +1,26 @@
+.avata-styles {
+  background-size: cover;
+  height: 100px;
+  margin-left: auto;
+  display: block;
+  margin-right: auto;
+}
+
+.button-styles{
+  align-content: flex-end;
+}
+.disable-text{
+  -webkit-user-select:none;
+  -webkit-touch-callout:none;
+       -moz-user-select:none;
+       -ms-user-select:none;
+       user-select:none;
+
+ }
+.profile-input-width{
+  width: 100%;
+}
+:host ::ng-deep .mat-divider {
+  width: 112%;
+  margin-left: -24px;
+}

@@ -1,0 +1,37 @@
+
+.button-styles{
+  width: 100% !important;
+  min-width: unset!important;
+  border-radius: 10px;
+}
+
+
+ :host ::ng-deep.mat-form-field-infix {
+  margin-left: 15px;
+}
+:host {
+  text-align: center;
+  display: block;
+  margin-top: 10%;
+}
+
+form {
+  max-width: 300px;
+  margin: auto;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.actions {
+  text-align: center;
+}
+.textStyles{
+  font-size: medium;
+  font-family: cursive;
+
+}
+.header{
+  font-weight: 700;
+}

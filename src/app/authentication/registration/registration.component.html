@@ -1,0 +1,88 @@
+<toaster-container [toasterconfig]="config1"></toaster-container>
+<div class="header">Register</div>
+<form [formGroup]="registerform" (ngSubmit)="registration(); onSubmit()">
+  <mat-form-field>
+    <mat-icon matPrefix>person</mat-icon>
+    <input
+      matInput
+      placeholder="UserName"
+      formControlName="userName"
+      type="text"
+      required
+    />
+    <mat-error *ngIf="registerform.controls.userName.invalid">
+      UserName atlest more then 6 cherecters
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-icon matPrefix>vpn_key</mat-icon>
+    <input
+      matInput
+      placeholder="Password"
+      [type]="hide ? 'text' : 'password'"
+      formControlName="password"
+      required
+    />
+    <mat-icon matSuffix (click)="hide = !hide"
+      >{{hide ? 'visibility' : 'visibility_off'}}</mat-icon
+    >
+    <mat-error *ngIf="registerform.controls.password.invalid">
+      Password must be AlphaNumeric
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-icon matPrefix>vpn_key</mat-icon>
+    <input
+      matInput
+      placeholder="ConformPassword"
+      [type]="hide ? 'text' : 'password'"
+      formControlName="cpassword"
+      required
+    />
+    <mat-error *ngIf="registerform.controls.password.invalid">
+      Password must be AlphaNumeric
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-icon matPrefix>mail</mat-icon>
+    <input
+      matInput
+      placeholder="Mailid"
+      type="mail"
+      formControlName="mailid"
+      required
+    />
+    <mat-error *ngIf="registerform.controls.phoneno.invalid">
+      please enter a valid MailId
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-icon matPrefix>phone</mat-icon>
+    <input
+      matInput
+      placeholder="PhoneNo"
+      type="text"
+      formControlName="phoneno"
+      required
+    />
+    <mat-error *ngIf="registerform.controls.phoneno.invalid">
+      please enter a valid PhoneNo
+    </mat-error>
+  </mat-form-field>
+  <br />
+  <br />
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="!registerform.valid"
+    class="button-styles"
+  >
+    Register
+  </button>
+  <span>
+    <p>
+      <span class="textStyles">Already have an accoutnt ?</span> &nbsp;
+      <a class="textStyles" routerLink="/login">Login..!</a>
+    </p>
+  </span>
+</form>
